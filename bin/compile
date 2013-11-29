@@ -175,6 +175,7 @@ export CPATH="$INCLUDE_PATH:$CPATH"
 export CPPPATH="$INCLUDE_PATH:$CPPPATH"
 
 # install dependencies with npm
+echo "-----> Build dir is $BUILD_DIR"
 echo "-----> Installing dependencies with npm"
 run_npm "install --production"
 run_npm "rebuild"
