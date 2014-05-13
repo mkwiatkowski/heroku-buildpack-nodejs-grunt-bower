@@ -191,14 +191,14 @@ else
   echo "-----> No Bower.json found"
 fi
 
-#if [ -f $BUILD_DIR/grunt.js ] || [ -f $BUILD_DIR/Gruntfile.js ] || [ -f $BUILD_DIR/Gruntfile.coffee ]; then
+if [ -f $BUILD_DIR/grunt.js ] || [ -f $BUILD_DIR/Gruntfile.js ] || [ -f $BUILD_DIR/Gruntfile.coffee ]; then
   # make sure that grunt-cli and bower are installed locally
-#  run_npm "install grunt-cli"
-#  echo "-----> Found Gruntfile, running grunt task"
-#  $BUILD_DIR/node_modules/.bin/grunt
-#else
-#  echo "-----> No Gruntfile (grunt.js, Gruntfile.js, Gruntfile.coffee) found"
-#fi
+  run_npm "install grunt-cli"
+  echo "-----> Found Gruntfile, running grunt task"
+  $BUILD_DIR/node_modules/.bin/grunt
+else
+  echo "-----> No Gruntfile (grunt.js, Gruntfile.js, Gruntfile.coffee) found"
+fi
 
 echo "-----> Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
